@@ -1,0 +1,228 @@
+/* ###################################################### */
+/*                       General Rules                    */
+/* ###################################################### */
+
+* {
+    box-sizing: border-box;
+
+    max-height: 100%;
+    max-width: 100%;
+}
+
+html {
+    font-size: 1vw;
+    scroll-behavior: smooth;
+}
+
+/*helps with overflow on pictures*/
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-height: 100%;
+    max-width: 100%;
+
+    object-fit: cover;
+}
+
+main img {
+    border-radius: 20px;
+}
+
+body {
+    background: var(--background-color);
+
+    padding: 0;
+    margin: 0;
+
+    font-family: RalewayLight, Helvetica, sans-serif;
+    color: var(--text-color);
+
+    overflow-x: hidden;
+}
+
+header {
+    overflow: hidden;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    display: inline-block;
+    margin-right: 1.2em;
+    list-style-type: none;
+}
+
+header a {
+    display: block;
+    padding: 0.5em 1em;
+
+    text-transform: uppercase;
+    line-height: 2em;
+    letter-spacing: 0.03em;
+}
+
+header a:link {
+    color: var(--background-two);
+}
+
+header a:visited {
+    color: var(--dark-text-color);
+}
+
+header a:hover {
+    color: var(--red);
+}
+
+header a:active {
+    color: var(--background-five);
+}
+
+header img {
+    float: left;
+
+    margin: 10px 15px 15px 10px;
+
+    width: 50px;
+    height: auto;
+}
+
+nav {
+    float: right;
+}
+
+a {
+    text-decoration: none;
+    font-family: RalewayMedium;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    place-items: center;
+    height: 100vh;
+    letter-spacing: 0.3px;
+}
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family: RalewayMedium;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 1em;
+
+    color: var(--dark-text-color);
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+span {
+    background-color: var(--red);
+    padding: 5px;
+}
+
+footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: ". .";
+
+    color: var(--dark-text-color);
+
+    align-items: center;
+}
+
+footer p {
+    font-size: 0.8em;
+}
+
+.scene,
+.frame {
+    display: grid;
+}
+
+.scene {
+    position: relative;
+    text-align: center;
+    color: var(--light-text-color);
+
+    background-size: 70%;
+}
+
+.scene:nth-of-type(1) {
+    background-color: var(--background-one);
+}
+
+.scene:nth-of-type(2) {
+    background-color: var(--background-two);
+}
+
+.scene:nth-of-type(3) {
+    background-color: var(--background-three);
+    color: var(--dark-text-color);
+}
+
+.scene:nth-of-type(4) {
+    background-color: var(--background-five);
+}
+
+.scene:nth-of-type(5) {
+    background-color: var(--background-two);
+}
+
+.scene:nth-of-type(6) {
+    background-color: var(--background-six);
+}
+
+.frame {
+    height: 95%;
+    width: 85%;
+    max-width: 1440px;
+}
+
+.one,
+.two,
+.three,
+.five,
+.six {
+    display: grid;
+    gap: 2% 3%;
+
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+/* scroll up button */
+.back-up {
+    position: absolute;
+    background-color: var(--background-three);
+    border-radius: 50%;
+
+    right: 20px;
+    bottom: 20px;
+}

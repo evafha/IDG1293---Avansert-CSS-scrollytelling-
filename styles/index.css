@@ -1,0 +1,888 @@
+/*colors*/
+:root {
+  --background-color: #f2f2f2;
+  --background-one: #9aac8a;
+  --background-two: #49733d;
+  --background-three: #bdd2ea;
+  --background-five: #4f99cc;
+  --background-six: #9aac8a;
+  --red: #d93b3b;
+  --grey: #939598;
+  --dark-text-color: #08250e;
+  --light-text-color: #f2f2f2;
+}
+
+/*fonts*/
+@font-face {
+  font-family: RalewayLight;
+  src: url(../assets/fonts/Raleway-Light.ttf);
+}
+@font-face {
+  font-family: RalewayMedium;
+  src: url(../assets/fonts/Raleway-Medium.ttf);
+}
+@font-face {
+  font-family: RalewayThin;
+  src: url(../assets/fonts/Raleway-Thin.ttf);
+}
+/* ###################################################### */
+/*                       General Rules                    */
+/* ###################################################### */
+* {
+  box-sizing: border-box;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+html {
+  font-size: 1vw;
+  scroll-behavior: smooth;
+}
+
+/*helps with overflow on pictures*/
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+main img {
+  border-radius: 20px;
+}
+
+body {
+  background: var(--background-color);
+  padding: 0;
+  margin: 0;
+  font-family: RalewayLight, Helvetica, sans-serif;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+header {
+  overflow: hidden;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  display: inline-block;
+  margin-right: 1.2em;
+  list-style-type: none;
+}
+
+header a {
+  display: block;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 0.03em;
+}
+
+header a:link {
+  color: var(--background-two);
+}
+
+header a:visited {
+  color: var(--dark-text-color);
+}
+
+header a:hover {
+  color: var(--red);
+}
+
+header a:active {
+  color: var(--background-five);
+}
+
+header img {
+  float: left;
+  margin: 10px 15px 15px 10px;
+  width: 50px;
+  height: auto;
+}
+
+nav {
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  font-family: RalewayMedium;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  place-items: center;
+  height: 100vh;
+  letter-spacing: 0.3px;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-family: RalewayMedium;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 1em;
+  color: var(--dark-text-color);
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+span {
+  background-color: var(--red);
+  padding: 5px;
+}
+
+footer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: ". .";
+  color: var(--dark-text-color);
+  align-items: center;
+}
+
+footer p {
+  font-size: 0.8em;
+}
+
+.scene,
+.frame {
+  display: grid;
+}
+
+.scene {
+  position: relative;
+  text-align: center;
+  color: var(--light-text-color);
+  background-size: 70%;
+}
+
+.scene:nth-of-type(1) {
+  background-color: var(--background-one);
+}
+
+.scene:nth-of-type(2) {
+  background-color: var(--background-two);
+}
+
+.scene:nth-of-type(3) {
+  background-color: var(--background-three);
+  color: var(--dark-text-color);
+}
+
+.scene:nth-of-type(4) {
+  background-color: var(--background-five);
+}
+
+.scene:nth-of-type(5) {
+  background-color: var(--background-two);
+}
+
+.scene:nth-of-type(6) {
+  background-color: var(--background-six);
+}
+
+.frame {
+  height: 95%;
+  width: 85%;
+  max-width: 1440px;
+}
+
+.one,
+.two,
+.three,
+.five,
+.six {
+  display: grid;
+  gap: 2% 3%;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+/* scroll up button */
+.back-up {
+  position: absolute;
+  background-color: var(--background-three);
+  border-radius: 50%;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* ###################################################### */
+/*               Pictures between sections                */
+/* ###################################################### */
+.between-sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 10%;
+}
+
+.between-sections h2 {
+  margin: auto;
+  font-size: 2em;
+}
+
+/*one*/
+img.arrow-down {
+  display: inline-block;
+  margin-left: 0.75em;
+  width: 3em;
+  height: 3em;
+  border: 0.2em solid var(--light-text-color);
+  border-radius: 50%;
+  filter: grayscale(100%) invert(100%);
+  margin: auto;
+}
+
+.bounce {
+  animation: bounce 1.2s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*fixed background*/
+.fixed-background {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+}
+
+.fixed-one {
+  background-image: url("../assets/images/drought.jpg");
+  /*<a href="https://www.freepik.com/free-photo/elderly-man-sitting-touch-with-rain-dry-season-global-warming-selection-focus_5469296.htm#query=water%20eco%20drought&position=28&from_view=search&track=ais">Image by jcomp</a> on Freepik*/
+}
+
+.fixed-two {
+  background-image: url("../assets/images/owerflow.jpg");
+  /*<a href="https://www.freepik.com/free-photo/elderly-man-sitting-touch-with-rain-dry-season-global-warming-selection-focus_5469296.htm#query=water%20eco%20drought&position=28&from_view=search&track=ais">Image by jcomp</a> on Freepik*/
+}
+
+.fixed-three {
+  background-image: url("../assets/images/coral-reef.jpg");
+  /*<a href="https://www.freepik.com/free-photo/coral-reef_28944298.htm#query=coral%20reefs&position=39&from_view=search&track=ais">Image by kamchatka</a> on Freepik*/
+}
+
+.fixed-four {
+  background-image: url("../assets/images/world-environment.jpg");
+  /*Image by <a href="https://www.freepik.com/free-photo/exterior-portrait-kids-world-environment-day_25068780.htm#query=helpingclimatechange&position=6&from_view=search&track=ais?log-in=email">Freepik</a>*/
+}
+
+/* ###################################################### */
+/*                          Scene 1                       */
+/* ###################################################### */
+.one {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.2fr 0.5fr;
+  gap: 2% 2%;
+  grid-template-areas: "one-title one-title one-title" ". . ." "one-text one-text one-text";
+}
+
+.one-title {
+  grid-area: one-title;
+  padding: 1%;
+}
+
+.one-text {
+  grid-area: one-text;
+}
+
+div.one-text > p:first-of-type {
+  font-family: RalewayMedium;
+}
+
+.one img {
+  height: 100%;
+  width: 100%;
+}
+
+/* ###################################################### */
+/*                          Scene 2                       */
+/* ###################################################### */
+.two {
+  grid-template-columns: repeat(1, 0.5fr 1fr 0.5fr);
+  grid-template-rows: 0.2fr 0.5fr 0.5fr;
+  grid-template-areas: "two-text two-text thermometer" "two-text two-text thermometer" "two-text-2 two-text-2 thermometer";
+}
+
+.two-title {
+  grid-area: two-title;
+}
+
+.two-text {
+  grid-area: two-text;
+}
+
+.two-text-2 {
+  grid-area: two-text-2;
+}
+
+.thermometer {
+  grid-area: thermometer;
+}
+
+/* Thermometer column and text */
+.thermometer {
+  position: relative;
+  height: 150px;
+  width: 30px;
+  top: -60px;
+  border-radius: 22px 22px 0 0;
+  border: 5px solid var(--dark-text-color);
+  border-bottom: none;
+  box-shadow: inset 0 0 0 3px var(--background-two);
+  transform: scale(2.5);
+}
+
+/* Thermometer Bulb */
+.thermometer:before {
+  content: " ";
+  position: absolute;
+  background: var(--red);
+  border-radius: 44px;
+  border: 5px solid var(--dark-text-color);
+  box-shadow: inset 0 0 0 3px var(--background-two);
+  height: 52px;
+  width: 52px;
+  top: 141px;
+  left: -21px;
+  z-index: 2;
+  /* Place the bulb under the column */
+}
+
+/* This piece here connects the column with the bulb */
+.thermometer:after {
+  content: " ";
+  position: absolute;
+  background: var(--red);
+  height: 15px;
+  width: 20px;
+  box-shadow: inset 0 3px 0 3px var(--background-two);
+  top: 135px;
+  left: 0px;
+  z-index: 3;
+}
+
+.mercury {
+  position: absolute;
+  background-color: var(--red);
+  border-radius: 0 0 10px 10px;
+  opacity: 0;
+  height: 0;
+  width: 70%;
+  left: 3px;
+  bottom: 0;
+  z-index: 5;
+  transition: height 2s ease-out;
+  transition-delay: 0.2s;
+}
+
+.animation-rise {
+  height: 90%;
+}
+
+/* ###################################################### */
+/*                          Scene 3                       */
+/* ###################################################### */
+.three {
+  background-color: var(--background-color);
+  grid-template-columns: repeat(1, 1fr 1fr 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: ". . ." ". three-text ." ". . .";
+}
+
+.three-text {
+  grid-area: three-text;
+  z-index: 3;
+}
+
+.three-wave {
+  position: absolute;
+  background-color: var(--background-three);
+  --mask: radial-gradient(72.11px at 50% 100px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
+      radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  height: 10%;
+  width: 95%;
+  bottom: 0;
+  z-index: 1;
+  transition: height 2s ease-out;
+  transition-delay: -0.4s;
+}
+
+.animation-rise {
+  height: 80%;
+}
+
+.three-wave p {
+  margin-top: 100px;
+  text-align: center;
+  font-family: RalewayMedium;
+}
+
+img.three-picture {
+  height: 70%;
+  width: 70%;
+}
+
+/* ###################################################### */
+/*                          Scene 4                       */
+/* ###################################################### */
+.four {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.7fr 0.5fr 0.5fr;
+  grid-template-areas: "coral-2 . four-title four-title four-title . coral-4" ". . four-text-1 . four-text-2 . ." "coral-1 coral-1 coral-5 coral-5 coral-5 coral-3 coral-3";
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.four-title {
+  grid-area: four-title;
+}
+
+.four-text-1 {
+  grid-area: four-text-1;
+}
+
+.four-text-2 {
+  grid-area: four-text-2;
+}
+
+.coral-1 {
+  grid-area: coral-1;
+}
+
+.coral-2 {
+  grid-area: coral-2;
+}
+
+.coral-3 {
+  grid-area: coral-3;
+}
+
+.coral-4 {
+  grid-area: coral-4;
+}
+
+.coral-5 {
+  grid-area: coral-5;
+}
+
+/* ###################################################### */
+/*                          Scene 5                       */
+/* ###################################################### */
+.five {
+  grid-template-columns: repeat(1, 1fr 1fr 1fr);
+  grid-template-rows: 0.4fr 0.4fr;
+  grid-template-areas: ". . ." ". five-download .";
+}
+
+.five-download {
+  grid-area: five-download;
+}
+
+a.five-download img {
+  height: 18.75em;
+  width: auto;
+}
+
+.five a,
+.six a {
+  color: var(--light-text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: RalewayMedium;
+}
+
+/* ###################################################### */
+/*                          Scene 6                       */
+/* ###################################################### */
+.six {
+  grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
+  grid-template-rows: 1fr 0.5fr;
+  grid-template-areas: "six-help six-help six-help six-picture" "six-picture-two six-help-2 six-help-2 six-help-2";
+}
+
+.six-help-2 {
+  grid-area: six-help-2;
+}
+
+.six-help {
+  grid-area: six-help;
+}
+
+.six-picture {
+  grid-area: six-picture;
+}
+
+.six-picture-two {
+  grid-area: six-picture-two;
+}
+
+img.six-picture,
+img.six-picture-two {
+  height: 70%;
+  width: 100%;
+}
+
+div.six-help > p:first-of-type {
+  font-family: RalewayMedium;
+}
+
+a.animation-from-left {
+  font-size: larger;
+}
+
+.animation-from-left {
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: transform 0.7s ease-out;
+  transition-delay: 0.3s;
+}
+
+.animation-from-right {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: transform 0.7s ease-out;
+  transition-delay: 0.3s;
+}
+
+.animation-sides {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ###################################################### */
+/*                           Media                        */
+/* ###################################################### */
+@media only screen and (min-width: 801px) {
+  html {
+    font-size: clamp(13px, 1vw, 18px);
+  }
+  .scene:nth-of-type(4) {
+    height: auto;
+  }
+  .scene:nth-of-type(1) {
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: clamp(10px, 3vw, 15px);
+    overflow-x: hidden;
+  }
+  .scene:not(:nth-of-type(3)):not(:nth-of-type(4)) {
+    padding: 50px 0px;
+    height: auto;
+  }
+  .frame.one,
+  .frame.two,
+  .frame.three,
+  .frame.five,
+  .frame.six {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+  .frame.one {
+    grid-template-rows: 1fr 1fr 1fr;
+    height: auto;
+  }
+  .one-title,
+  .one-text {
+    grid-area: auto;
+  }
+  .one > img {
+    max-height: 280px;
+    min-height: 280px;
+  }
+  .frame.two {
+    grid-template-rows: 1fr 1.3fr 0.6fr;
+    height: auto;
+  }
+  .two-text {
+    grid-area: auto;
+    grid-row: 1/2;
+  }
+  .thermometer {
+    grid-area: auto;
+    grid-row: 2/3;
+    top: -40px;
+    transform: scale(1);
+  }
+  .two-text-2 {
+    grid-area: auto;
+    grid-row: 3/4;
+  }
+  .frame.three {
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .three-text {
+    grid-area: auto;
+    grid-row: 2/3;
+  }
+  .frame.five {
+    height: auto;
+    grid-template-rows: repeat(6, 0.5fr) 0.2fr;
+    gap: 0;
+  }
+  .five div:nth-of-type(5) {
+    grid-row: 5/6;
+  }
+  .five-download {
+    grid-area: auto;
+  }
+  .frame.six {
+    height: auto;
+    grid-template-rows: 0.3fr 1fr 380px 0.4fr;
+    gap: 20px 0px;
+  }
+  .six img {
+    min-width: 100%;
+  }
+  .six-picture {
+    grid-area: auto;
+    grid-row: 2/3;
+  }
+  .six-help {
+    grid-area: auto;
+  }
+  img.six-picture-two {
+    height: 100%;
+    grid-area: auto;
+  }
+  .six-help-2 {
+    grid-area: auto;
+  }
+  header a {
+    font-size: 1.2em;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1.2em;
+  }
+  .one-title h1 span {
+    margin: auto;
+    width: max-content;
+    display: block;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #242424;
+    --background-one: #5d715f;
+    --background-two: #2f4d2a;
+    --background-three: #5d7c9f;
+    --background-five: #1e6383;
+    --background-six: #5d715f;
+    --red: #d93b3b;
+    --grey: #939598;
+    --dark-text-color: #f2f2f2;
+    --light-text-color: #f2f2f2;
+  }
+  img.arrow-down {
+    filter: grayscale(0%) invert(0%);
+  }
+}
+@media (prefers-reduced-motion) {
+  .mercury,
+  .three-wave,
+  .animation-from-left,
+  .animation-from-right,
+  .animation-sides,
+  .arrow-down,
+  .bounce {
+    -webkit-transition-property: none;
+    -moz-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
+  }
+}
+/*circles*/
+.circle {
+  position: absolute;
+  background-color: white;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 99;
+}
+
+.circle:nth-of-type(1) {
+  height: 10em;
+  width: 10em;
+  right: 0;
+  bottom: -100px;
+}
+
+.circle:nth-of-type(2) {
+  height: 15em;
+  width: 15em;
+  right: 10px;
+  bottom: -180px;
+}
+
+.circle:nth-of-type(3) {
+  height: 20em;
+  width: 20em;
+  left: 0;
+  top: 700px;
+}
+
+.circle:nth-of-type(4) {
+  height: 15em;
+  width: 15em;
+  right: 0;
+  bottom: 0;
+}
+
+/*Bubble animation*/
+.bubble {
+  border-radius: 100%;
+  position: absolute;
+  background-color: white;
+  bottom: -20px;
+  opacity: 0.2;
+  animation: bubble 10s ease-in-out infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.06;
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 100px;
+  }
+}
+.bubble1 {
+  left: 10%;
+  animation-delay: 0.5s;
+  animation-duration: 46s;
+  opacity: 0.2;
+}
+
+.bubble2 {
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  animation-delay: 1s;
+  animation-duration: 40s;
+  opacity: 0.1;
+}
+
+.bubble3 {
+  width: 10px;
+  height: 10px;
+  left: 30%;
+  animation-delay: 5s;
+  animation-duration: 50s;
+  opacity: 0.3;
+}
+
+.bubble4 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  animation-delay: 10s;
+  animation-duration: 34s;
+  opacity: 0.1;
+}
+
+.bubble5 {
+  width: 10px;
+  height: 10px;
+  left: 80%;
+  animation-delay: 3s;
+  animation-duration: 60s;
+  opacity: 0.4;
+}
+
+.bubble6 {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  bottom: 40px;
+  animation-delay: -5s;
+  animation-duration: 42s;
+  opacity: 0.2;
+}
+
+.bubble7 {
+  width: 40px;
+  height: 40px;
+  left: 30%;
+  bottom: 40px;
+  animation-delay: -21s;
+  animation-duration: 48s;
+  opacity: 0.3;
+}
+
+.bubble8 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  bottom: 40px;
+  animation-delay: -13.75s;
+  animation-duration: 40s;
+  opacity: 0.3;
+}/*# sourceMappingURL=index.css.map */

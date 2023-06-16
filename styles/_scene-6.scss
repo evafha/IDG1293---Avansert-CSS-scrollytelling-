@@ -1,0 +1,60 @@
+/* ###################################################### */
+/*                          Scene 6                       */
+/* ###################################################### */
+
+.six {
+    grid-template-columns: repeat(1, 1fr 1fr 1fr 1fr);
+    grid-template-rows: 1fr 0.5fr;
+    grid-template-areas:
+        "six-help six-help six-help six-picture"
+        "six-picture-two six-help-2 six-help-2 six-help-2";
+}
+
+.six-help-2 {
+    grid-area: six-help-2;
+}
+
+.six-help {
+    grid-area: six-help;
+}
+
+.six-picture {
+    grid-area: six-picture;
+}
+
+.six-picture-two {
+    grid-area: six-picture-two;
+}
+
+img.six-picture,
+img.six-picture-two {
+    height: 70%;
+    width: 100%;
+}
+
+div.six-help > p:first-of-type {
+    font-family: RalewayMedium;
+}
+
+a.animation-from-left {
+    font-size: larger;
+}
+
+.animation-from-left {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: transform 0.7s ease-out;
+    transition-delay: 0.3s;
+}
+
+.animation-from-right {
+    opacity: 0;
+    transform: translateX(200px);
+    transition: transform 0.7s ease-out;
+    transition-delay: 0.3s;
+}
+
+.animation-sides {
+    opacity: 1;
+    transform: translateX(0);
+}

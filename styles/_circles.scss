@@ -1,0 +1,42 @@
+/*circles*/
+.circle {
+    position: absolute;
+    background-color: white;
+    opacity: 0.1;
+
+    border-radius: 50%;
+
+    z-index: 99;
+}
+
+.circle:nth-of-type(1) {
+    height: 10em;
+    width: 10em;
+
+    right: 0;
+    bottom: -100px;
+}
+
+.circle:nth-of-type(2) {
+    height: 15em;
+    width: 15em;
+
+    right: 10px;
+    bottom: -180px;
+}
+
+.circle:nth-of-type(3) {
+    height: 20em;
+    width: 20em;
+
+    left: 0;
+    top: 700px;
+}
+
+.circle:nth-of-type(4) {
+    height: 15em;
+    width: 15em;
+
+    right: 0;
+    bottom: 0;
+}

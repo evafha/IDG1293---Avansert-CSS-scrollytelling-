@@ -1,0 +1,51 @@
+/* ###################################################### */
+/*                          Scene 3                       */
+/* ###################################################### */
+.three {
+    background-color: var(--background-color);
+    grid-template-columns: repeat(1, 1fr 1fr 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        ". . ."
+        ". three-text ."
+        ". . .";
+}
+
+.three-text {
+    grid-area: three-text;
+    z-index: 3;
+}
+
+.three-wave {
+    position: absolute;
+    background-color: var(--background-three);
+    --mask: radial-gradient(72.11px at 50% 100px, #000 99%, #0000 101%) calc(50% - 80px) 0/160px 100%,
+        radial-gradient(72.11px at 50% -60px, #0000 99%, #000 101%) 50% 40px/160px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+    height: 10%;
+    width: 95%;
+
+    bottom: 0;
+
+    z-index: 1;
+
+    transition: height 2s ease-out;
+    transition-delay: -0.4s;
+}
+
+.animation-rise {
+    height: 80%;
+}
+
+.three-wave p {
+    margin-top: 100px;
+    text-align: center;
+    font-family: RalewayMedium;
+}
+
+img.three-picture {
+    height: 70%;
+    width: 70%;
+}

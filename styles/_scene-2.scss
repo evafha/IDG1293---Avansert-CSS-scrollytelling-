@@ -1,0 +1,103 @@
+/* ###################################################### */
+/*                          Scene 2                       */
+/* ###################################################### */
+
+.two {
+    grid-template-columns: repeat(1, 0.5fr 1fr 0.5fr);
+    grid-template-rows: 0.2fr 0.5fr 0.5fr;
+    grid-template-areas:
+        "two-text two-text thermometer"
+        "two-text two-text thermometer"
+        "two-text-2 two-text-2 thermometer";
+}
+
+.two-title {
+    grid-area: two-title;
+}
+
+.two-text {
+    grid-area: two-text;
+}
+
+.two-text-2 {
+    grid-area: two-text-2;
+}
+
+.thermometer {
+    grid-area: thermometer;
+}
+
+/* Thermometer column and text */
+.thermometer {
+    position: relative;
+
+    height: 150px;
+    width: 30px;
+
+    top: -60px;
+
+    border-radius: 22px 22px 0 0;
+    border: 5px solid var(--dark-text-color);
+    border-bottom: none;
+    box-shadow: inset 0 0 0 3px var(--background-two);
+
+    transform: scale(2.5);
+}
+
+/* Thermometer Bulb */
+.thermometer:before {
+    content: " ";
+    position: absolute;
+    background: var(--red);
+    border-radius: 44px;
+    border: 5px solid var(--dark-text-color);
+    box-shadow: inset 0 0 0 3px var(--background-two);
+
+    height: 52px;
+    width: 52px;
+
+    top: 141px;
+    left: -21px;
+
+    z-index: 2;
+    /* Place the bulb under the column */
+}
+
+/* This piece here connects the column with the bulb */
+.thermometer:after {
+    content: " ";
+    position: absolute;
+    background: var(--red);
+
+    height: 15px;
+    width: 20px;
+    box-shadow: inset 0 3px 0 3px var(--background-two);
+
+    top: 135px;
+    left: 0px;
+
+    z-index: 3;
+}
+
+.mercury {
+    position: absolute;
+    background-color: var(--red);
+    border-radius: 0 0 10px 10px;
+
+    opacity: 0;
+
+    height: 0;
+    width: 70%;
+
+    left: 3px;
+    bottom: 0;
+
+    z-index: 5;
+
+    transition: height 2s ease-out;
+    transition-delay: 0.2s;
+}
+
+.animation-rise {
+    height: 90%;
+}

@@ -1,0 +1,78 @@
+/* ###################################################### */
+/*               Pictures between sections                */
+/* ###################################################### */
+
+.between-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: 100vh;
+
+    padding: 10%;
+}
+
+.between-sections h2 {
+    margin: auto;
+    font-size: 2em;
+}
+
+/*one*/
+img.arrow-down {
+    display: inline-block;
+    margin-left: 0.75em;
+    width: 3em;
+    height: 3em;
+
+    border: 0.2em solid var(--light-text-color);
+    border-radius: 50%;
+    filter: grayscale(100%) invert(100%);
+    margin: auto;
+}
+
+.bounce {
+    animation: bounce 1.2s linear infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*fixed background*/
+.fixed-background {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 50vh;
+    width: 100%;
+}
+
+.fixed-one {
+    background-image: url("../assets/images/drought.jpg");
+    /*<a href="https://www.freepik.com/free-photo/elderly-man-sitting-touch-with-rain-dry-season-global-warming-selection-focus_5469296.htm#query=water%20eco%20drought&position=28&from_view=search&track=ais">Image by jcomp</a> on Freepik*/
+}
+
+.fixed-two {
+    background-image: url("../assets/images/owerflow.jpg");
+    /*<a href="https://www.freepik.com/free-photo/elderly-man-sitting-touch-with-rain-dry-season-global-warming-selection-focus_5469296.htm#query=water%20eco%20drought&position=28&from_view=search&track=ais">Image by jcomp</a> on Freepik*/
+}
+
+.fixed-three {
+    background-image: url("../assets/images/coral-reef.jpg");
+    /*<a href="https://www.freepik.com/free-photo/coral-reef_28944298.htm#query=coral%20reefs&position=39&from_view=search&track=ais">Image by kamchatka</a> on Freepik*/
+}
+
+.fixed-four {
+    background-image: url("../assets/images/world-environment.jpg");
+    /*Image by <a href="https://www.freepik.com/free-photo/exterior-portrait-kids-world-environment-day_25068780.htm#query=helpingclimatechange&position=6&from_view=search&track=ais?log-in=email">Freepik</a>*/
+}

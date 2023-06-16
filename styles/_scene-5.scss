@@ -1,0 +1,29 @@
+/* ###################################################### */
+/*                          Scene 5                       */
+/* ###################################################### */
+
+.five {
+    grid-template-columns: repeat(1, 1fr 1fr 1fr);
+    grid-template-rows: 0.4fr 0.4fr;
+    grid-template-areas:
+        ". . ."
+        ". five-download .";
+}
+
+.five-download {
+    grid-area: five-download;
+}
+
+a.five-download img {
+    height: 18.75em;
+    width: auto;
+}
+
+.five a,
+.six a {
+    color: var(--light-text-color);
+    text-decoration: none;
+
+    text-transform: uppercase;
+    font-family: RalewayMedium;
+}
